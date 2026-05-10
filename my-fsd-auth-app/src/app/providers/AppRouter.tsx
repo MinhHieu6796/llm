@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LoginPage } from '@/pages/login';
 import { DashboardPage } from '@/pages/dashboard';
+import { TasksPage } from '@/pages/tasks';
 import { useUserStore } from '@/entities/user/model/userStore';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -19,6 +20,14 @@ export const AppRouter = () => {
           element={
             <ProtectedRoute>
               <DashboardPage />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/tasks" 
+          element={
+            <ProtectedRoute>
+              <TasksPage />
             </ProtectedRoute>
           } 
         />
